@@ -45,15 +45,17 @@ export class PlaceFitnessTrainerAppointmentComponent implements OnInit {
       lastname: ['', Validators.required],
       age: ['', Validators.required],
       phonenumber: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      streetaddress: [''],
-      city: [''],
-      state: [''],
-      country: [''],
-      pincode: [''],
+      email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$')]],
+      streetaddress: ['',Validators.required],
+      city: ['',Validators.required],
+      state: ['',Validators.required],
+      country: ['',Validators.required],
+      pincode: ['',Validators.required],
       trainerpreference: [''], // Initial value can be set here if needed
       physiotherapist: [''],   // Initial value can be set here if needed
-      package: ['']           // Initial value can be set here if needed
+      package: [''],           // Initial value can be set here if needed
+      weeks: ['',Validators.required],           // Initial value can be set here if needed
+      inr: ['',Validators.required]           // Initial value can be set here if needed
     });
   }
 

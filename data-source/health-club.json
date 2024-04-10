@@ -1,5 +1,5 @@
 {
-  "query":[],
+  "query": [],
   "appointment": [
     {
       "firstname": "test",
@@ -17,7 +17,42 @@
       "packages": "Weekly",
       "inr": 2800,
       "id": 1
+    },
+    {
+      "firstname": "sfdd",
+      "lastname": "dsf",
+      "age": 234,
+      "phonenumber": "34567788",
+      "email": "dsfd@gmail.com",
+      "streetaddress": "fsdfc",
+      "city": "dfgsd",
+      "state": "sfd",
+      "country": "dfgdfg",
+      "pincode": 34566,
+      "trainerpreference": "male",
+      "physiotherapist": "No",
+      "package": "Package A",
+      "weeks": 3,
+      "inr": 3244,
+      "id": 2
+    },
+    {
+      "firstname": "dsf",
+      "lastname": "dsf",
+      "age": 22,
+      "phonenumber": "3546677",
+      "email": "dsfd@gmail.com",
+      "streetaddress": "vdxvxc",
+      "city": "rtre",
+      "state": "vxcv",
+      "country": "vcxcv",
+      "pincode": 34566,
+      "trainerpreference": "none",
+      "physiotherapist": "No",
+      "package": "Package B",
+      "weeks": 2,
+      "inr": 345324,
+      "id": 3
     }
-
   ]
 }

@@ -11,6 +11,17 @@
       <th class="h7">Phone</th>
     </tr>
   </thead>
+  <tbody>
+    <tr *ngFor="let appointment of appointments; let i = index">
+      <td>{{i+1}}</td>
+      <td>{{appointment.firstname}} {{appointment.lastname}}</td>
+      <td>{{appointment.streetaddress}}</td>
+      <td>{{appointment.city}}</td>
+      <td>{{appointment.package}}</td>
+      <td>{{appointment.trainerpreference}}</td>
+      <td>{{appointment.phonenumber}}</td>
+      
+    </tr>
 </table>
     
 </div>

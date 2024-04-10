@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit} from '@angular/core';
 import {  FormBuilder, FormGroup } from "@angular/forms";
 import { Validators } from '@angular/forms';
+import { UserService } from '../_services';
 
 export class Fitness {
   constructor(
@@ -32,7 +34,7 @@ export class PlaceFitnessTrainerAppointmentComponent implements OnInit {
 
   fitnessForm: FormGroup;
   
-  constructor(private _fb:FormBuilder) { }
+  constructor(private _fb:FormBuilder,private _userSVC:UserService) { }
   
 
   ngOnInit() {
@@ -61,9 +63,17 @@ export class PlaceFitnessTrainerAppointmentComponent implements OnInit {
 
   onSubmit() {
     if (this.fitnessForm.valid) {
-      console.log('Form submitted successfully.');
-      console.log(this.fitnessForm)
-      // Here you can perform actions like sending the form data to a server.
+      console.log('Form is valid. Submitting the form data.');
+      this._userSVC.postfitnessdata(this.fitnessForm.value)
+        .subscribe(
+          data => {
+            console.log('Success!', data);
+          },
+          error => {
+            console.error('Error!', error);
+          }
+        );
+     
     } else {
       console.log('Form is invalid. Please fill in all required fields correctly.');
     }

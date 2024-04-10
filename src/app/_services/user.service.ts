@@ -18,6 +18,15 @@ export class UserService {
     getfitnessdata() {
       return this.http.get(UserService.BaseUrl+'appointment',httpOptions).pipe(map((response: Response) => response.json()));
     }
-
     // add more methods as per requirements
-}
+
+    deletefitnessdata(id){
+      return this.http.delete(UserService.BaseUrl+'appointment/'+id,httpOptions).pipe(map((response: Response) => response.json()));
+    }
+    updatefitnessdata(data){
+      return this.http.put(UserService.BaseUrl+'appointment/'+data.id,data,httpOptions).pipe(map((response: Response) => response.json()));
+    }
+    submitContactForm(data){
+      return this.http.post(UserService.BaseUrl+'query',data,httpOptions).pipe(map((response: Response) => response.json()));
+    }
+  }

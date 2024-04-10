@@ -1,5 +1,4 @@
-
-<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+<form [formGroup]="contactForm" class="contactForm" (ngSubmit)="onSubmit()" novalidate>
     <label>Contact-us</label>
     <div class="form-group">
         <label for="exampleInputfirstname">First Name</label>
@@ -50,6 +49,6 @@
         </small>
 
     </div>
-    <button type="submit" >Submit</button>
+    <button class="submit_button" type="submit">Submit</button>
 
 </form>

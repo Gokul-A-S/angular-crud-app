@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UserService } from '../_services';
 
 export class Contact {
   constructor(
@@ -18,8 +19,7 @@ export class ContactUsComponent implements OnInit {
   @Output() contactdata = new EventEmitter<Contact>();
   contactForm: FormGroup;
   public obj: any = {};
-  constructor(private fb: FormBuilder) { }
-
+  constructor(private fb: FormBuilder, private _userSVC:UserService) { }
 
   ngOnInit() {
     this.contactForm = this.fb.group({
@@ -34,6 +34,9 @@ export class ContactUsComponent implements OnInit {
   onSubmit() {
     this.obj = { ...this.contactForm.value, ...this.obj };
     this.contactForm.value;
+    this._userSVC.submitContactForm(this.obj).subscribe((data) => {
+      console.log(data);
+    });
     console.log(
       "LOG: LoginComponent -> onSubmit -> this.contactForm.value",
       this.contactForm.value
